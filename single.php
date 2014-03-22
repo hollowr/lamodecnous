@@ -182,7 +182,8 @@ var htmlCleaned = jQuery(".post-content").html().replace(/<br\s?\/?>/, '');
 jQuery(".post-content").html(htmlCleaned);
 
 		jQuery('.header').hide();
-        var wrapImgs = jQuery('.post-content img').not('.ch_media img').not('.ch_title img').wrap('<li class="myimgs"></li>');
+        var wrapImgs = jQuery('.post-content img').not('.ch_media').not('.ch_title').wrap('<li class="myimgs"></li>');
+        console.log(wrapImgs);
         var myimgs = wrapImgs.clone();
         jQuery('.post-content').wrapInner('<div class="theContent" style="overflow-y:scroll;"></div>');
         jQuery('.post-content a[rel*="attachment"]').remove();
